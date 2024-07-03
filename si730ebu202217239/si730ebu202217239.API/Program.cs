@@ -5,6 +5,14 @@ using si730ebu202217239.inventory.Application.Internal.QueryServices;
 using si730ebu202217239.inventory.Domain.Repositories;
 using si730ebu202217239.inventory.Domain.Services;
 using si730ebu202217239.inventory.Infrastructure.Persistence.EFC.Repositories;
+using si730ebu202217239.inventory.Interfaces.ACL;
+using si730ebu202217239.inventory.Interfaces.ACL.Services;
+using si730ebu202217239.maintenance.Application.Internal.CommandServices;
+using si730ebu202217239.maintenance.Application.Internal.OutboundServices.ACL;
+using si730ebu202217239.maintenance.Application.Internal.OutboundServices.ACL.Services;
+using si730ebu202217239.maintenance.Application.Internal.QueryServices;
+using si730ebu202217239.maintenance.Domain.Services;
+using si730ebu202217239.maintenance.Infrastructure.Persistence.EFC.Repositories;
 using si730ebu202217239.Shared.Domain.Repositories;
 using si730ebu202217239.Shared.Infrastructure.Persistence.EFC.Configuration;
 using si730ebu202217239.Shared.Infrastructure.Persistence.EFC.Repositories;
@@ -85,7 +93,13 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IProductQueryService, ProductQueryService>();
 builder.Services.AddScoped<IProductCommandService, ProductCommandService>();
+builder.Services.AddScoped<IProductsContextFacade, ProductsContextFacade>();
 
+//Maintenance Bounded Context Injection Configuration
+builder.Services.AddScoped<IMaintenanceActivityRepository, MaintenanceActivityRepository>();
+builder.Services.AddScoped<IMaintenanceActivityQueryService, MaintenanceActivityQueryService>();
+builder.Services.AddScoped<IMaintenanceActivityCommandService, MaintenanceActivityCommandService>();
+builder.Services.AddScoped<IExternalProductService, ExternalProductService>();
 /*
  * 
  * BOUNDED CONTEXTS INJECTION CONFIGURATION
@@ -117,3 +131,4 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+

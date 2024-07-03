@@ -19,19 +19,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="maintenance\Application\internal\CommandServices\" />
-      <Folder Include="maintenance\Application\internal\QueryServices\" />
-      <Folder Include="maintenance\Domain\Model\Aggregates\" />
-      <Folder Include="maintenance\Domain\Model\Commands\" />
-      <Folder Include="maintenance\Domain\Model\Queries\" />
-      <Folder Include="maintenance\Domain\Model\ValueObjects\" />
-      <Folder Include="maintenance\Domain\Repositories\" />
-      <Folder Include="maintenance\Domain\Services\" />
-      <Folder Include="maintenance\Infrastructure\Persistence\EFC\Repositories\" />
-      <Folder Include="maintenance\Interfaces\Rest\Resources\" />
-      <Folder Include="maintenance\Interfaces\Rest\Transform\" />
-      <Folder Include="model\Application\internal\CommandServices\" />
-      <Folder Include="model\Application\internal\QueryServices\" />
+      <Folder Include="model\Application\Internal\CommandServices\" />
+      <Folder Include="model\Application\Internal\QueryServices\" />
       <Folder Include="model\Domain\Model\Aggregates\" />
       <Folder Include="model\Domain\Model\Commands\" />
       <Folder Include="model\Domain\Model\Queries\" />
